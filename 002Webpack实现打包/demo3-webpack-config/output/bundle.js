@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=(()=>{const e=document.createElement("div");return e.innerHTML="Please Login",e})();document.body.append(e)})();

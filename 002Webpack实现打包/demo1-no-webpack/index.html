@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpack的基本使用:demo1</title>
+</head>
+<body>
+    <div>
+        <p>按照 ES Modules 的标准，这里的 index.html 可以直接在浏览器中正常工作，</p>
+        <p>但是对于不支持 ES Modules 标准的浏览器，直接使用就会出现错误，</p>
+        <p>所以我们需要使用 Webpack 这样的工具，将我们这里按照模块化方式拆分的 JS 代码再次打包到一起。</p>
+    </div>
+
+    <img src="../img/demo1 ESmodule Error.png" width="400" />
+
+    <!-- type="module" 是 ES Modules 中提出的标准，用来区分加载的是一个普通 JS 脚本还是一个模块。 -->
+    <!-- 通过script标签 模块化 引入index.js -->
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>

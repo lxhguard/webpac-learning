@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stage1-文件划分方式</title>
+</head>
+<body>
+    <center>
+        stage1-文件划分方式
+    </center>
+    <div>实践：将每个功能及其相关状态数据各自单独放到不同的 JS 文件中，约定每个文件是一个独立的模块。</div>
+    <div>使用：使用A模块，则将A模块引入到页面中，一个 script 标签对应一个模块，然后直接调用模块中的成员（变量 / 函数）</div>
+    <div>
+        <B>缺点:</B>
+        <p>1. 污染全局作用域</p>
+        <p>2. 容易产生命名冲突</p>
+        <p>3. 模块内的成员 可 在模块外被访问和篡改</p>
+        <p>4. 无法管理模块与模块之间的依赖关系</p>
+        <p>5. 在维护的过程中也很难分辨每个成员所属的模块。</p>
+    </div>
+
+
+    <script src="./login.js"></script><!-- 引入变量loginUserName -->
+    <script src="./register.js"></script><!-- 引入函数RegisterNewUser -->
+    <script>
+        console.log(loginUserName); // 直接使用全局变量loginUserName 全局变量可能被修改
+        RegisterNewUser(); // 可能存在命名冲突（此时输出 name conflict）
+        loginUserName = 'loginUserName is distorted'; // 修改全局变量
+        // 命名冲突发生了 (index.html和register.js都存在RegisterNewUser方法)
+        function RegisterNewUser() {
+            console.log('name conflict');
+            console.log(
+                'this is index.html RegisterNewUser, register.js RegisterNewUser is distorted'
+            );
+        }
+    </script>
+</body>
+</html>

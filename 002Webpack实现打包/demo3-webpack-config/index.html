@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpack的基本使用:demo3</title>
+    <style>
+        .color-grey {
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>配置 Webpack 的打包过程: webpack.config.js文件，通过entry控制入口文件，output控制出口文件</p>
+       <img src="../img/demo3-webpack-config.png" width="400">
+    </div>
+
+    
+    <hr />
+
+    <!-- type="module" 是 ES Modules 中提出的标准，用来区分加载的是一个普通 JS 脚本还是一个模块。 -->
+    <!-- 通过script标签 模块化 引入index.js -->
+    <script src="./output/bundle.js"></script>
+</body>
+</html>

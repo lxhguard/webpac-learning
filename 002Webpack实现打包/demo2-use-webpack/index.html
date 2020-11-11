@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webpack的基本使用:demo2</title>
+    <style>
+        .color-grey {
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>引入 Webpack 去处理demo2中的 JS 模块打包,步骤如下：</p>
+        <p>1. Webpack 是一个 npm 工具模块，所以先初始化一个 package.json 文件，用来管理 npm 依赖版本</p>
+        <b>npm init --yes</b>
+        <p class="color-grey">PS: 会出现package.json文件</p>
+        <p>2. 安装 Webpack 的核心模块以及它的 CLI 模块</p>
+        <b>npm i webpack webpack-cli --save-dev</b>
+        <p class="color-grey">PS: 会出现package-lock.json文件和node_modules目录</p>
+        <p class="color-grey">PS: webpack 是 Webpack 的核心模块，webpack-cli 是 Webpack 的 CLI 程序，用来在命令行中调用 Webpack。</p>
+        <p>3. webpack-cli 所提供的 CLI 程序就会出现在 node_modules/.bin 目录当中，我们可以通过 npx 快速找到 CLI 并运行它，具体操作如下：</p>
+        <b>npx webpack --version</b>
+        <p class="color-grey">PS: npx 是 npm 5.2 以后新增的一个命令，快速执行远程模块或项目 node_modules 中的 CLI 程序。</p>
+        <p>4. 运行 webpack 命令来打包 JS 模块代码</p>
+        <b>npx webpack</b>
+        <img src="../img/demo2 use Webpack.png" width="400" />
+        <p class="color-grey">PS: 生成dist目录，打包结果放在其下的main.js中</p>
+        <p>5. 删除index.html中的type="module"，以及修改src为./dist/main.js。此时代码仍正常工作。</p>
+        <p>6. 进阶操作：将 Webpack 命令定义到 npm scripts 中，使用更加方便。比如配置："build": "webpack"</p>
+        <img src="../img/demo2 webpack scripts.png" width="400" />
+    </div>
+
+    <b>总结：使用webpack打包步骤如下</b>
+    <p>先安装 webpack 相关的 npm 包，然后使用 webpack-cli 所提供的命令行工具进行打包。</p>
+    
+    <hr />
+
+    <!-- type="module" 是 ES Modules 中提出的标准，用来区分加载的是一个普通 JS 脚本还是一个模块。 -->
+    <!-- 通过script标签 模块化 引入index.js -->
+    <script src="./dist/main.js"></script>
+</body>
+</html>

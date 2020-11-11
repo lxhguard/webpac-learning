@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage2–命名空间</title>
+</head>
+<body>
+    <script src="./login.js"></script>
+    <script src="./register.js"></script>
+    <script>
+        login.GetOTP(); // login---GetOTP()
+        register.GetOTP(); // register---GetOTP()
+        console.log('修改成员前：', login.userName); // 阿吉
+        login.userName = "tampered 阿吉";
+        console.log('修改成员后：', login.userName); // tampered 阿吉
+    </script>
+</body>
+</html>
